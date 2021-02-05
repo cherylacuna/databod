@@ -42,6 +42,9 @@ class Particle {
   }
 }
 
+//text with cursor
+let crossSize = 100;
+
 // an array to add multiple particles
 let particles = [];
 
@@ -50,6 +53,8 @@ function setup() {
   for(let i = 0;i<width/10;i++){
     particles.push(new Particle());
   }
+  textSize(80);
+  fill(255);
 }
 
 function draw() {
@@ -65,4 +70,13 @@ function draw() {
   //stroke(40, 200, 100);
   strokeWeight(60);
   point(mouseX, mouseY);
+  let mousePosition = "(" + mouseX + "," + mouseY + ")";
+
+ noStroke();
+ text(mousePosition, mouseX + 5, mouseY - 5);
+
+ stroke('rgba(255, 195, 0, 0.3)');
+ strokeWeight(2);
+ line(mouseX - crossSize, mouseY, mouseX + crossSize, mouseY);
+ line(mouseX, mouseY - crossSize, mouseX, mouseY + crossSize);
 }
