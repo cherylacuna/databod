@@ -7,7 +7,7 @@ class Particle {
   constructor(){
     this.x = random(0,width);
     this.y = random(0,height);
-    this.r = random(1,8);
+    this.r = random(6,40);
     this.xSpeed = random(-0.5,0.5);
     this.ySpeed = random(-0.3,1.5);
   }
@@ -15,7 +15,7 @@ class Particle {
 // creation of a particle.
   createParticle() {
     noStroke();
-    fill('rgba(200,169,169,0.5)');
+    fill('rgba(200,169,169,0.4)');
     circle(this.x,this.y,this.r);
   }
 
@@ -48,13 +48,18 @@ let crossSize = 100;
 // an array to add multiple particles
 let particles = [];
 
+//background gradient colors
+let c1,c2;
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   for(let i = 0;i<width/10;i++){
     particles.push(new Particle());
   }
   textSize(80);
-  fill(255);
+  fill(100);
+
 }
 
 function draw() {
@@ -64,7 +69,7 @@ function draw() {
     particles[i].moveParticle();
     particles[i].joinParticles(particles.slice(i));
   }
-//styles for point
+  //styles for point
   smooth();
   fill(120);
   //stroke(40, 200, 100);
@@ -73,6 +78,7 @@ function draw() {
   let mousePosition = "(" + mouseX + "," + mouseY + ")";
 
  noStroke();
+ fill('rgba(218, 247, 166, 0.6)');
  text(mousePosition, mouseX + 5, mouseY - 5);
 
  stroke('rgba(255, 195, 0, 0.3)');
