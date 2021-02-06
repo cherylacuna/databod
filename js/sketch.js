@@ -7,7 +7,7 @@ class Particle {
   constructor(){
     this.x = random(0,width);
     this.y = random(0,height);
-    this.r = random(6,40);
+    this.r = random(6,80);
     this.xSpeed = random(-0.5,0.5);
     this.ySpeed = random(-0.3,1.5);
   }
@@ -85,4 +85,11 @@ function draw() {
  strokeWeight(2);
  line(mouseX - crossSize, mouseY, mouseX + crossSize, mouseY);
  line(mouseX, mouseY - crossSize, mouseX, mouseY + crossSize);
+
+ fill('rgba(217, 217, 217, 0.6)');
+ noStroke();
+ rect(81, 200, 400, 500, 50, 15, 30, 5);
+ //text('poopy poop', 10, 10);
+
+
 }
