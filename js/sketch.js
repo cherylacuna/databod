@@ -35,7 +35,7 @@ class Particle {
     particles.forEach(element =>{
       let dis = dist(this.x,this.y,element.x,element.y);
       if(dis<85) {
-        stroke('rgba(255,255,255,0.04)');
+        stroke('rgba(144, 12, 63,0.2)');
         line(this.x,this.y,element.x,element.y);
       }
     });
@@ -53,11 +53,11 @@ let c1,c2;
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1250, 600);
   for(let i = 0;i<width/10;i++){
     particles.push(new Particle());
   }
-  textSize(80);
+
   fill(100);
 
 }
@@ -78,7 +78,8 @@ function draw() {
   let mousePosition = "(" + mouseX + "," + mouseY + ")";
 
  noStroke();
- fill('rgba(218, 247, 166, 0.6)');
+ fill('rgba(41, 128, 185, 0.6)');
+ textSize(80);
  text(mousePosition, mouseX + 5, mouseY - 5);
 
  stroke('rgba(255, 195, 0, 0.3)');
@@ -88,8 +89,11 @@ function draw() {
 
  fill('rgba(217, 217, 217, 0.6)');
  noStroke();
- rect(81, 200, 400, 500, 50, 15, 30, 5);
- //text('poopy poop', 10, 10);
+ rect(81, 50, 400, 500, 60, 20, 40, 5);
+
+ fill(70);
+ textSize(14);
+ text('poopy poop ', 150, 300);
 
 
 }
