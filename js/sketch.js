@@ -75,10 +75,10 @@ function draw() {
   //stroke(40, 200, 100);
   strokeWeight(60);
   point(mouseX, mouseY);
-  let mousePosition = "(" + mouseX + "," + mouseY + ")";
+  let mousePosition = "(" + round(mouseX) + "," + round(mouseY) + ")";
 
  noStroke();
- fill('rgba(41, 128, 185, 0.6)');
+ fill('rgba(218, 247, 166, 0.6)');
  textSize(80);
  text(mousePosition, mouseX + 5, mouseY - 5);
 
@@ -93,7 +93,7 @@ function draw() {
 
  fill(70);
  textSize(14);
- text('poopy poop ', 150, 300);
+ text('coming soon... ', 150, 150);
 
 
 }

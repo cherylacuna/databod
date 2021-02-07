@@ -9,20 +9,35 @@
     body {
       padding: 0;
       margin: 0;
-
-      background: rgb(238,174,202);
+      background: rgb(230, 230, 230);
 /* background: -moz-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 background: -webkit-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endColorstr="#94bbe9",GradientType=1); */
     }
 
+    canvas {
+      border-radius: 12px;
+      border:10px solid rgba(217, 217, 217, 0.6);
+      /* border-color: rgba(217, 217, 217, 0.6) !important; */
+
+
+    }
+
     main {
       position: fixed; /* or absolute */
-      top: 50%;
+      top: 57%;
       left: 50%;
       margin-top: -300px;
       margin-left: -625px;
+    }
+
+    #headerimg {
+      position: fixed; /* or absolute */
+      top: 5%;
+      left: 50%;
+      margin-left: -250px;
+
     }
   </style>
   <script src="js/p5.js"></script>
@@ -31,6 +46,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endCo
 </head>
 
 <body>
+  <div id="headerimg">
+  <img style="width: 150px;"src="img/source.gif"></img>
+  <img style="width: 150px;"src="img/giphy.gif"></img>
+  <img style="width: 150px;"src="img/source-1.gif"></img>
+
+  </div>
   <main>
   </main>
 </body>
