@@ -117,7 +117,6 @@ function draw() {
   fill(120);
   //stroke(40, 200, 100);
   strokeWeight(60);
-  point(mouseX, mouseY);
   textAlign(LEFT, LEFT);
   let mousePosition = "(" + round(mouseX) + "," + round(mouseY) + ")";
 
@@ -133,13 +132,11 @@ function draw() {
 
  fill('rgba(217, 217, 217, 0.6)');
  noStroke();
- rect(81, 50, 400, 500, 60, 20, 40, 5);
+ rect(75, 40, 400, 500, 60, 20, 40, 5);
 
  fill(70);
  textSize(14);
  text('coming soon... ', 150, 150);
-
-
 
 
 }
