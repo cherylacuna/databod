@@ -48,41 +48,85 @@ let crossSize = 100;
 // an array to add multiple particles
 let particles = [];
 
-//background gradient colors
-let c1,c2;
-
+// an array for box numbers
+let arr = [];
 
 function setup() {
-  createCanvas(1250, 600);
+  createCanvas(1300, 600);
   for(let i = 0;i<width/10;i++){
     particles.push(new Particle());
   }
 
-  fill(100);
+  for(let i =1; i<313; i++){
+  arr.push(i);
+ }
 
 }
 
+
 function draw() {
+
   background('#9E355C');
+
+
   for(let i = 0;i<particles.length;i++) {
     particles[i].createParticle();
     particles[i].moveParticle();
     particles[i].joinParticles(particles.slice(i));
   }
+
+  //grid boxes
+   textAlign(CENTER, CENTER);
+
+    for (let y = 0; y < 12; y++) {
+      for (let x = 0; x < 26; x++) {
+        let xpos = x *50;
+        let ypos = y *50;
+
+        let index = y * 26 + x; // find the index
+
+        if( inside(xpos, ypos, 50,50) ){
+          // were inside
+          fill('rgba(144, 12, 63, 0.7)');
+        } else {
+          // not inside
+            noFill();
+        }
+
+        stroke('rgba(144, 12, 63, 0.7)');
+        strokeWeight(0.3);
+        rect(xpos, ypos, 50, 50);
+        fill('rgba(144, 12, 63, 1)');
+        noStroke();
+        text(arr[index], xpos, ypos, 50, 50);
+
+      }
+    }
+
+    function inside(x, y, w, h){
+     if(mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
+      return true;
+     } else {
+      return false;
+     }
+    }
+
+
   //styles for point
   smooth();
   fill(120);
   //stroke(40, 200, 100);
   strokeWeight(60);
   point(mouseX, mouseY);
+  textAlign(LEFT, LEFT);
   let mousePosition = "(" + round(mouseX) + "," + round(mouseY) + ")";
 
  noStroke();
  fill('rgba(218, 247, 166, 0.6)');
  textSize(80);
- text(mousePosition, mouseX + 5, mouseY - 5);
+ text(mousePosition, mouseX + 10, mouseY - 50);
 
- stroke('rgba(255, 195, 0, 0.3)');
+ stroke('rgba(255, 195, 0, 1)');
  strokeWeight(2);
  line(mouseX - crossSize, mouseY, mouseX + crossSize, mouseY);
  line(mouseX, mouseY - crossSize, mouseX, mouseY + crossSize);
@@ -94,6 +138,8 @@ function draw() {
  fill(70);
  textSize(14);
  text('coming soon... ', 150, 150);
+
+
 
 
 }
