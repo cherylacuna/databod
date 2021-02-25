@@ -51,15 +51,6 @@ let particles = [];
 // an array for box numbers
 let arr = [];
 
-//horoscope array and paragraph
-let horoscopeTextArray;
-let horoscopeP;
-
-function preload() {
-  //loading the horoscope data
-  horoscopeTextArray = loadStrings("data/new.txt");
-}
-
 function setup() {
   createCanvas(1300, 600);
   for(let i = 0;i<width/10;i++){
