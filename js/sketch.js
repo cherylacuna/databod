@@ -70,6 +70,11 @@ function setup() {
   arr.push(i);
  }
 
+//create empty horoscope P tag
+horoscopeP = createP("");
+
+
+
 }
 
 
@@ -92,11 +97,16 @@ function draw() {
         let xpos = x *50;
         let ypos = y *50;
 
-        let index = y * 26 + x; // find the index
+        let index = x * 12 + y; // find the index
 
         if( inside(xpos, ypos, 50,50) ){
           // were inside
           fill('rgba(144, 12, 63, 0.7)');
+          //replace horosope paragraph text with current index number
+          //that example (new.txt) only has 27 lines so after box 27 you'll get
+          //undefined as your paragraph text. You need to add more entries.
+          horoscopeP.html(horoscopeTextArray[index])
+
         } else {
           // not inside
             noFill();
@@ -128,8 +138,8 @@ function draw() {
 
  noStroke();
  fill('rgba(218, 247, 166, 0.6)');
- textSize(80);
- text(mousePosition, mouseX + 10, mouseY - 50);
+ // textSize(80);
+ // text(mousePosition, mouseX + 10, mouseY - 50);
 
  stroke('rgba(255, 195, 0, 1)');
  strokeWeight(2);
@@ -138,11 +148,13 @@ function draw() {
 
  fill('rgba(217, 217, 217, 0.6)');
  noStroke();
- rect(75, 40, 400, 500, 60, 20, 40, 5);
+ // rect(75, 40, 400, 500, 60, 20, 40, 5);
 
  fill(70);
  textSize(14);
- text(mousePosition, 150, 150);
+ // text('', 150, 150);
 
 
 }
+
+//

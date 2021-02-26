@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+
+  Horoscope prediction data taken from www.cafeastrology.com
+
+-->
 <html lang="">
 
 <head>
@@ -22,8 +27,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endCo
       border-radius: 12px;
       border:10px solid rgba(217, 217, 217, 0.6);
       /* border-color: rgba(217, 217, 217, 0.6) !important; */
-
-
     }
 
     main {
@@ -40,6 +43,22 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endCo
       margin-left: -245px;
 
     }
+
+
+    p{
+      position: fixed; /* or absolute */
+      color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(217, 217, 217, 0.4);
+      width:400px;
+      height:510px;
+      top:29%;
+      left:14%;
+      overflow: scroll;
+      padding:15px;
+      z-index:2;
+      border-radius: 15px 50px;
+    }
+
   </style>
   <script src="js/p5.js"></script>
   <script src="js/p5.sound.min.js"></script>
@@ -59,6 +78,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endCo
   <img style="width: 150px;"src="img/source-1.gif"></img>
 
   </div>
+
+  <div id="horoscope">
+    <p></p>
+  </div>
+
   <main>
   </main>
 
